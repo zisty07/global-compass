@@ -26,4 +26,5 @@ jobs:
       run: |
         npm install
         npx webpack
+        cd global-compass
         npm run dev
