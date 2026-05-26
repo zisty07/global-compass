@@ -35,7 +35,8 @@ export default defineConfig(({ mode }) => {
   const geminiModel = env.GEMINI_MODEL ?? process.env.GEMINI_MODEL ?? "gemini-2.5-flash-lite";
   const geminiFallbackModel =
     env.GEMINI_FALLBACK_MODEL ?? process.env.GEMINI_FALLBACK_MODEL ?? "gemini-2.0-flash-lite";
-
+  base: '/global-pulse/', // Înlocuiește 'global-pulse' cu numele exact al repo-ului tău
+  // ... restul configurărilor existente
   syncGeminiDevVars(root, mode);
 
   return {
