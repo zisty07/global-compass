@@ -44,7 +44,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [geminiEnvPlugin()],
     vite: {
-      base: '/global-pulse/', // <--- REZOLVAT! Aici trebuia să stea proprietatea base
+      base: '/global-compass/',
       // Server-only: static `process.env.GEMINI_*` in getGeminiConfig() is replaced at build time.
       define: {
         "process.env.GEMINI_API_KEY": JSON.stringify(geminiApiKey),
