@@ -35,8 +35,7 @@ export default defineConfig(({ mode }) => {
   const geminiModel = env.GEMINI_MODEL ?? process.env.GEMINI_MODEL ?? "gemini-2.5-flash-lite";
   const geminiFallbackModel =
     env.GEMINI_FALLBACK_MODEL ?? process.env.GEMINI_FALLBACK_MODEL ?? "gemini-2.0-flash-lite";
-  base: '/global-pulse/', // Înlocuiește 'global-pulse' cu numele exact al repo-ului tău
-  // ... restul configurărilor existente
+  
   syncGeminiDevVars(root, mode);
 
   return {
@@ -45,6 +44,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [geminiEnvPlugin()],
     vite: {
+      base: '/global-pulse/', // <--- REZOLVAT! Aici trebuia să stea proprietatea base
       // Server-only: static `process.env.GEMINI_*` in getGeminiConfig() is replaced at build time.
       define: {
         "process.env.GEMINI_API_KEY": JSON.stringify(geminiApiKey),
